@@ -1,4 +1,4 @@
-package com.example.applicationselectionwl
+package com.example.applicationselectionwl.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,8 +24,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             ApplicationSelectionWLTheme {
                 val navController = rememberNavController()
-
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -34,20 +32,16 @@ class MainActivity : ComponentActivity() {
                     Box(modifier = Modifier.fillMaxWidth()) {
                         NavHost(
                             navController = navController,
-                            startDestination = "ScreenRoute.LoginScreen.route",
+                            startDestination = "SelectionScreen",
 
                             ) {
-
-                            //post
-
-
-                            composable(route ="selectionScreen") {
+                            composable(route ="SelectionScreen") {
                                 SelectionScreen()
                             }
-                            composable(route = "waitScreen") {
+                            composable(route = "WaitScreen") {
                                 WaitScreen()
                             }
-                            composable(route = "abortScreen") {
+                            composable(route = "AbortScreen") {
                                 AbortScreen()
                             }
 
@@ -58,21 +52,5 @@ class MainActivity : ComponentActivity() {
 
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ApplicationSelectionWLTheme {
-        Greeting("Android")
     }
 }
