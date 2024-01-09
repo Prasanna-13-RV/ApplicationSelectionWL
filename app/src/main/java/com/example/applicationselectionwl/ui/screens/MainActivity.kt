@@ -8,14 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.*
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.applicationselectionwl.ui.screens.AbortScreen
-import com.example.applicationselectionwl.ui.screens.SelectionScreen
-import com.example.applicationselectionwl.ui.screens.WaitScreen
+
 import com.example.applicationselectionwl.ui.theme.ApplicationSelectionWLTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,9 +28,8 @@ class MainActivity : ComponentActivity() {
                         NavHost(
                             navController = navController,
                             startDestination = "SelectionScreen",
-
-                            ) {
-                            composable(route ="SelectionScreen") {
+                        ) {
+                            composable(route = "SelectionScreen") {
                                 SelectionScreen()
                             }
                             composable(route = "WaitScreen") {
@@ -47,9 +41,7 @@ class MainActivity : ComponentActivity() {
 
                         }
                     }
-
                 }
-
             }
         }
     }
