@@ -16,7 +16,11 @@ import com.example.applicationselectionwl.ui.theme.ApplicationSelectionWLTheme
 @Composable
 fun EachApplication() {
     Row {
-        Image(painter = painterResource(R.drawable.mastercard), contentDescription = "mastercard", modifier = Modifier.width(20.dp))
+        Image(
+            painter = painterResource(R.drawable.mastercard),
+            contentDescription = "mastercard",
+            modifier = Modifier.width(20.dp)
+        )
         Text("Mastercard")
     }
 }
