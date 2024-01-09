@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     Box(modifier = Modifier.fillMaxWidth()) {
                         NavHost(
                             navController = navController,
-                            startDestination = "ScreenRoute.LoginScreen.route",
+                            startDestination = "waitScreen",
 
                             ) {
 
