@@ -1,4 +1,4 @@
-package com.example.applicationselectionwl
+package com.example.applicationselectionwl.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,14 +8,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.*
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.applicationselectionwl.ui.screens.AbortScreen
-import com.example.applicationselectionwl.ui.screens.SelectionScreen
-import com.example.applicationselectionwl.ui.screens.WaitScreen
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
 import com.example.applicationselectionwl.ui.theme.ApplicationSelectionWLTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,11 +23,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ApplicationSelectionWLTheme {
                 val navController = rememberNavController()
-
-                // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
 
                     Box(modifier = Modifier.fillMaxWidth()) {
@@ -37,42 +33,29 @@ class MainActivity : ComponentActivity() {
                             startDestination = "waitScreen",
 
                             ) {
-
-                            //post
-
-
-                            composable(route ="selectionScreen") {
+                            composable(route = "SelectionScreen") {
                                 SelectionScreen()
                             }
-                            composable(route = "waitScreen") {
-                                WaitScreen()
+                            composable(
+                                route = "WaitScreen/{applicationModel}",
+                                arguments = listOf(navArgument("applicationModel") {
+                                    type = NavType.ParcelableType(ApplicationModel::class.java)
+                                })
+                            ) { backStackEntry ->
+                                val application =
+                                    backStackEntry.arguments?.getParcelable<ApplicationModel>("applicationModel")
+
+                                WaitScreen(data = application!!)
+
                             }
-                            composable(route = "abortScreen") {
+                            composable(route = "AbortScreen") {
                                 AbortScreen()
                             }
 
                         }
                     }
-
                 }
-
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ApplicationSelectionWLTheme {
-        Greeting("Android")
     }
 }
