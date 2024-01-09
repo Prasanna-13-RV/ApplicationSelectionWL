@@ -17,12 +17,12 @@ import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
 import com.example.applicationselectionwl.ui.theme.ApplicationSelectionWLTheme
 
 @Composable
-fun EachApplication(application: ApplicationModel, selectedApplication: String) {
+fun EachApplication(application: ApplicationModel, selectedApplication: String,setSelectedApplication: () -> Unit) {
 
     Row(verticalAlignment = Alignment.CenterVertically) {
         RadioButton(
             selected = selectedApplication == application.applicationName,
-            onClick = { /*TODO*/ })
+            onClick = { setSelectedApplication() })
         Image(
             painter = painterResource(application.image),
             contentDescription = application.applicationName,
@@ -38,6 +38,6 @@ fun EachApplication(application: ApplicationModel, selectedApplication: String) 
 @Composable
 fun SelectionScreenPreview() {
     ApplicationSelectionWLTheme {
-        EachApplication(ApplicationModel(0, "Visa", R.drawable.visa),"Visa")
+        EachApplication(ApplicationModel(0, "Visa", R.drawable.visa),"Visa") {}
     }
 }

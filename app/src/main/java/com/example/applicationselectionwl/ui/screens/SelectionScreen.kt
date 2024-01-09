@@ -19,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,6 +27,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.applicationselectionwl.R
 import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
 import com.example.applicationselectionwl.ui.components.selectionScreenComponents.BottomButtons
@@ -41,8 +44,8 @@ var dummy: List<ApplicationModel> = listOf(
 )
 
 @Composable
-fun SelectionScreen() {
-    val selectedApplication = remember { mutableStateOf("Visa") }
+fun SelectionScreen(navController: NavController) {
+    val selectedApplication = remember { mutableStateOf(dummy[0]) }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -81,13 +84,19 @@ fun SelectionScreen() {
                 }
                 Spacer(modifier = Modifier.height(10.dp))
                 LazyColumn {
-                    items(dummy) {
-                        EachApplication(it,selectedApplication.value,)
+                    items(dummy) { application ->
+                        EachApplication(
+                            application,
+                            selectedApplication.value.applicationName
+                        ) {
+                            selectedApplication.value =
+                                dummy.find { it.applicationName == application.applicationName }!!
+                        }
                     }
                 }
             }
 
-           BottomButtons()
+            BottomButtons(selectedApplication.value,navController)
         }
     }
 }
@@ -96,7 +105,7 @@ fun SelectionScreen() {
 @Composable
 fun SelectionScreenPreview() {
     ApplicationSelectionWLTheme {
-        SelectionScreen()
+        SelectionScreen(rememberNavController())
     }
 }
 

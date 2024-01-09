@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                             startDestination = "SelectionScreen",
                         ) {
                             composable(route = "SelectionScreen") {
-                                SelectionScreen()
+                                SelectionScreen(navController)
                             }
                             composable(route = "WaitScreen") {
                                 WaitScreen()

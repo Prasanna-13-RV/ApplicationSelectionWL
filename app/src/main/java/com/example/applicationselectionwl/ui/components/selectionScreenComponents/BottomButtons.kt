@@ -15,20 +15,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.applicationselectionwl.R
+import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
 import com.example.applicationselectionwl.ui.screens.SelectionScreen
 import com.example.applicationselectionwl.ui.theme.Abort
 import com.example.applicationselectionwl.ui.theme.ApplicationSelectionWLTheme
 import com.example.applicationselectionwl.ui.theme.GreenWL
 
 @Composable
-fun BottomButtons() {
+fun BottomButtons(selectedApplication: ApplicationModel, navController: NavController) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate("AbortScreen") },
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f), colors = ButtonDefaults.buttonColors(Abort)
@@ -37,13 +40,14 @@ fun BottomButtons() {
         }
         Spacer(modifier = Modifier.width(10.dp))
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+                navController.navigate("WaitScreen/$selectedApplication")
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f), colors = ButtonDefaults.buttonColors(GreenWL)
         ) {
             Text(text = "Complete", color = Color.White)
-            Image(painter = painterResource(id = R.drawable.baseline_arrow_right_alt_24), contentDescription ="Continue", )
         }
     }
 }
@@ -52,6 +56,6 @@ fun BottomButtons() {
 @Composable
 fun BottomButtonsPreview() {
     ApplicationSelectionWLTheme {
-        BottomButtons()
+        BottomButtons(ApplicationModel(0, "Visa", R.drawable.visa), rememberNavController())
     }
 }
