@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.CircularProgressIndicator
@@ -29,7 +30,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.applicationselectionwl.R
 import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
-import com.example.applicationselectionwl.ui.components.WorldlineLogo
 import com.example.applicationselectionwl.ui.theme.GreenWL
 import kotlinx.coroutines.delay
 
@@ -37,18 +37,22 @@ import kotlinx.coroutines.delay
 @Composable
 fun WaitScreen(data: ApplicationModel?) {
     var showContent by remember { mutableStateOf(false) }
-    val strokeWidth = 5.dp
 
+    val application = remember { mutableStateOf<ApplicationModel?>(null) }
 
     LaunchedEffect(Unit) {
-        delay(3000)
 
+        delay(3000)
         if (data != null) {
+            application.value = data
             showContent = true
         }
+
     }
 
+
     Column(
+
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
@@ -56,8 +60,13 @@ fun WaitScreen(data: ApplicationModel?) {
 
     ) {
 
-        Spacer(modifier = Modifier.height(20.dp))
-        WorldlineLogo()
+        Image(
+            painter = painterResource(R.drawable.worldline_logo),
+            contentDescription = "Worldline",
+            modifier = Modifier
+                .width(200.dp)
+                .padding(top = 30.dp),
+        )
 
         Column(
             verticalArrangement = Arrangement.Center,
@@ -69,13 +78,13 @@ fun WaitScreen(data: ApplicationModel?) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
 
                     Image(
-                        painter = painterResource(data!!.image),
-                        contentDescription = data.applicationName,
+                        painter = painterResource(application.value!!.image),
+                        contentDescription = application.value!!.applicationName,
                         modifier = Modifier.width(50.dp)
                     )
                     Spacer(modifier = Modifier.width(15.dp))
                     Text(
-                        data.applicationName,
+                        application.value!!.applicationName,
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
                         fontSize = 25.sp
@@ -85,14 +94,12 @@ fun WaitScreen(data: ApplicationModel?) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(120.dp),
                     color = Color.White,
-                    strokeWidth = strokeWidth
+                    strokeWidth = 5.dp
                 )
                 Spacer(modifier = Modifier.height(30.dp))
                 Text(text = stringResource(id = R.string.wait), color = Color.White)
 
             }
         }
-
-
     }
 }
