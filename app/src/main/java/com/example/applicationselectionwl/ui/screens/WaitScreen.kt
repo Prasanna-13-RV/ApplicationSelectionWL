@@ -41,15 +41,14 @@ fun WaitScreen(data: ApplicationModel?) {
 
     val application = remember { mutableStateOf<ApplicationModel?>(null) }
 
-
     LaunchedEffect(Unit) {
-        delay(3000)
 
+        delay(3000)
         if (data != null) {
             application.value = data
             showContent = true
-
         }
+
     }
 
 
@@ -61,7 +60,6 @@ fun WaitScreen(data: ApplicationModel?) {
             .background(GreenWL)
 
     ) {
-
 
         Image(
             painter = painterResource(R.drawable.worldline_logo),
@@ -104,7 +102,5 @@ fun WaitScreen(data: ApplicationModel?) {
 
             }
         }
-
-
     }
 }
