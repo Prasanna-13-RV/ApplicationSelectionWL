@@ -32,8 +32,7 @@ fun BottomButtons(selectedApplication: ApplicationModel, navController: NavContr
     ) {
         Button(
             onClick = {
-                navController.currentBackStackEntry?.savedStateHandle?.set("applicationModel", selectedApplication)
-                navController.navigate("WaitScreen")
+                navController.navigate("AbortScreen")
 
             },
             modifier = Modifier
@@ -45,7 +44,11 @@ fun BottomButtons(selectedApplication: ApplicationModel, navController: NavContr
         Spacer(modifier = Modifier.width(10.dp))
         Button(
             onClick = {
-                navController.navigate("WaitScreen/$selectedApplication")
+                navController.currentBackStackEntry?.savedStateHandle?.set(
+                    "applicationModel",
+                    selectedApplication
+                )
+                navController.navigate("WaitScreen")
             },
             modifier = Modifier
                 .fillMaxWidth()
