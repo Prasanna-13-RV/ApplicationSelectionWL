@@ -38,7 +38,6 @@ fun WaitScreen(data: ApplicationModel) {
 
 
     LaunchedEffect(Unit) {
-        // Delay for 3 seconds before showing the content
         delay(3000)
         showContent = true
     }
