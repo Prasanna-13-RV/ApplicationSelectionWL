@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -38,7 +39,6 @@ fun WaitScreen(data: ApplicationModel) {
 
 
     LaunchedEffect(Unit) {
-        // Delay for 3 seconds before showing the content
         delay(3000)
         showContent = true
     }
@@ -56,7 +56,7 @@ fun WaitScreen(data: ApplicationModel) {
 
         Image(
             painter = painterResource(R.drawable.worldline_logo),
-            contentDescription = stringResource(id = R.string.worldline),
+            contentDescription = "Worldline",
             modifier = Modifier
                 .width(200.dp)
                 .padding(top = 30.dp),
@@ -69,7 +69,14 @@ fun WaitScreen(data: ApplicationModel) {
         ) {
 
             if (showContent) {
-                Text(text = "Master card", color = Color.White)
+                Row {
+                    Image(
+                        painter = painterResource(data.aid),
+                        contentDescription = data.applicationName,
+                        modifier = Modifier.width(20.dp)
+                    )
+                    Text(data.applicationName)
+                }
             } else {
                 CircularProgressIndicator(
                     modifier = Modifier.size(120.dp),
