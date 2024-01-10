@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">SelezioneapplicazioneWL</string>
     <string name="wait">attendere prego</string>
-    <string name="declined">Declined</string>
-    <string name="transaction_aborted">Transaction aborted</string>
-
+    <string name="declined">Rifiutato</string>
+    <string name="transaction_aborted">Transazione interrotta</string>
 </resources>
