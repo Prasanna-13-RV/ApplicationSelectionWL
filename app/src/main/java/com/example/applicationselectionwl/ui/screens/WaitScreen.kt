@@ -49,7 +49,6 @@ fun WaitScreen(data: ApplicationModel?) {
         }
     }
 
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
