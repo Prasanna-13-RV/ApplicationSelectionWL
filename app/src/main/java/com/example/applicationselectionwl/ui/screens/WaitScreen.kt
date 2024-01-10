@@ -25,7 +25,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.applicationselectionwl.R
 import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
 import com.example.applicationselectionwl.ui.theme.GreenWL
@@ -60,7 +62,7 @@ fun WaitScreen(data: ApplicationModel?) {
 
         Image(
             painter = painterResource(R.drawable.worldline_logo),
-            contentDescription = stringResource(id = R.string.worldline),
+            contentDescription = "Worldline",
             modifier = Modifier
                 .width(200.dp)
                 .padding(top = 30.dp),
@@ -81,7 +83,7 @@ fun WaitScreen(data: ApplicationModel?) {
                         modifier = Modifier.width(50.dp)
                     )
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(data.applicationName)
+                    Text(data.applicationName, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 25.sp)
                 }
             } else {
                 CircularProgressIndicator(
