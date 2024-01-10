@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.applicationselectionwl.app-mergeDebugResources-48:/values-it-rIT/values-it-rIT.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\w136632\\OneDrive - Worldline\\Documents\\projects\\ApplicationSelectionWL\\app\\src\\main\\res\\values-it-rIT\\strings.xml",
+                    "from": {
+                        "startLines": "2,4,5,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "57,169,216,119",
+                        "endColumns": "60,45,67,48",
+                        "endOffsets": "113,210,279,163"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,116,162,230",
+                        "endColumns": "60,45,67,48",
+                        "endOffsets": "111,157,225,274"
+                    }
+                }
+            ]
+        }
+    ]
+}
