@@ -37,7 +37,6 @@ import kotlinx.coroutines.delay
 @Composable
 fun WaitScreen(data: ApplicationModel?) {
     var showContent by remember { mutableStateOf(false) }
-    val strokeWidth = 5.dp
 
     val application = remember { mutableStateOf<ApplicationModel?>(null) }
 
@@ -95,7 +94,7 @@ fun WaitScreen(data: ApplicationModel?) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(120.dp),
                     color = Color.White,
-                    strokeWidth = strokeWidth
+                    strokeWidth = 5.dp
                 )
                 Spacer(modifier = Modifier.height(30.dp))
                 Text(text = stringResource(id = R.string.wait), color = Color.White)
