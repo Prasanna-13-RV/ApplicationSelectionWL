@@ -23,6 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -66,19 +67,17 @@ fun SelectionScreen(navController: NavController) {
                 .fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween
         ) {
             Column {
-
                 Column {
-
                     Row(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Text(text = "Payment", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                        Text(text = stringResource(id = R.string.payment), fontWeight = FontWeight.Bold, fontSize = 20.sp)
                         Text(text = "00", fontWeight = FontWeight.Bold, fontSize = 20.sp)
                     }
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Select an application",
+                        text =  stringResource(id = R.string.select_an_application),
                         fontWeight = FontWeight.Bold,
                         fontSize = 20.sp
                     )

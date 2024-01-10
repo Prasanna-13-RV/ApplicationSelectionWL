@@ -4,4 +4,5 @@
     <string name="declined">Declined</string>
     <string name="transaction_aborted">Transaction aborted</string>
     <string name="payment">Payment</string>
+    <string name="select_an_application">Select an application</string>
 </resources>
