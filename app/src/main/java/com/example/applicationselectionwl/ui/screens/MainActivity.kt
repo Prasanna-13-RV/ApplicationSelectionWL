@@ -38,7 +38,6 @@ class MainActivity : ComponentActivity() {
                             composable(route = "AbortScreen") {
                                 AbortScreen()
                             }
-
                         }
                     }
                 }
