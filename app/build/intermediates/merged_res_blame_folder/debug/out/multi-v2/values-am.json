@@ -4,24 +4,7 @@
             "outputFile": "com.example.applicationselectionwl.app-mergeDebugResources-48:/values-am/values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\w136632\\.gradle\\caches\\transforms-3\\ec8d992bdd9786c7dc69fed0d94ba69d\\transformed\\core-1.10.0\\res\\values-am\\values-am.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,148,248,345,444,540,642,742",
-                        "endColumns": "92,99,96,98,95,101,99,100",
-                        "endOffsets": "143,243,340,439,535,637,737,838"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,26",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,198,298,395,494,590,692,2123",
-                        "endColumns": "92,99,96,98,95,101,99,100",
-                        "endOffsets": "193,293,390,489,585,687,787,2219"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\w136632\\.gradle\\caches\\transforms-3\\16be1c34a1b93c69ecc255eaaf88d9b0\\transformed\\ui-release\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\w136630\\.gradle\\caches\\transforms-3\\16be1c34a1b93c69ecc255eaaf88d9b0\\transformed\\ui-release\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\w136632\\.gradle\\caches\\transforms-3\\ef8fd35d2ecc24066c86e1a847061c15\\transformed\\material3-1.0.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\w136630\\.gradle\\caches\\transforms-3\\ef8fd35d2ecc24066c86e1a847061c15\\transformed\\material3-1.0.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "952,1215,1367",
                         "endColumns": "74,69,73",
                         "endOffsets": "1022,1280,1436"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\w136630\\.gradle\\caches\\transforms-3\\ec8d992bdd9786c7dc69fed0d94ba69d\\transformed\\core-1.10.0\\res\\values-am\\values-am.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,148,248,345,444,540,642,742",
+                        "endColumns": "92,99,96,98,95,101,99,100",
+                        "endOffsets": "143,243,340,439,535,637,737,838"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,26",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,198,298,395,494,590,692,2123",
+                        "endColumns": "92,99,96,98,95,101,99,100",
+                        "endOffsets": "193,293,390,489,585,687,787,2219"
                     }
                 }
             ]
