@@ -34,6 +34,7 @@ fun BottomButtons(selectedApplication: ApplicationModel, navController: NavContr
             onClick = {
                 navController.currentBackStackEntry?.savedStateHandle?.set("applicationModel", selectedApplication)
                 navController.navigate("WaitScreen")
+
             },
             modifier = Modifier
                 .fillMaxWidth()
