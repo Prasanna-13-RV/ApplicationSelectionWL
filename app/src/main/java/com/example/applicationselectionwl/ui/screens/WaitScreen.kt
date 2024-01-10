@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -32,14 +33,18 @@ import kotlinx.coroutines.delay
 
 
 @Composable
-fun WaitScreen(data: ApplicationModel) {
+fun WaitScreen(data: ApplicationModel?) {
     var showContent by remember { mutableStateOf(false) }
     val strokeWidth = 5.dp
 
 
     LaunchedEffect(Unit) {
         delay(3000)
-        showContent = true
+
+        if(data!=null){
+            showContent = true
+
+        }
     }
 
 
@@ -68,7 +73,16 @@ fun WaitScreen(data: ApplicationModel) {
         ) {
 
             if (showContent) {
-                Text(text = "Master card", color = Color.White)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+
+                    Image(
+                        painter = painterResource(data!!.image),
+                        contentDescription = data.applicationName,
+                        modifier = Modifier.width(50.dp)
+                    )
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(data.applicationName)
+                }
             } else {
                 CircularProgressIndicator(
                     modifier = Modifier.size(120.dp),
