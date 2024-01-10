@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ApplicationSelectionWL</string>
-    <string name="wait">Please wait</string>
+    <string name="wait">S\'il vous plaît, attendez</string>
     <string name="declined">Declined</string>
     <string name="transaction_aborted">Transaction aborted</string>
 </resources>
