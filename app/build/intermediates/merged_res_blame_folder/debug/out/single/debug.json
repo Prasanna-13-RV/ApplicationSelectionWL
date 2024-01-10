@@ -8,6 +8,14 @@
         "source": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-main-52:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-merged_res-50:\\drawable_cross_logo.png.flat",
+        "source": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-main-52:\\drawable\\cross_logo.png"
+    },
+    {
+        "merged": "com.example.applicationselectionwl.app-merged_res-50:/drawable_baseline_arrow_right_alt_24.xml.flat",
+        "source": "com.example.applicationselectionwl.app-main-52:/drawable/baseline_arrow_right_alt_24.xml"
+    },
+    {
         "merged": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-merged_res-50:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-main-52:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -34,10 +42,6 @@
     {
         "merged": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-merged_res-50:\\drawable_visa.png.flat",
         "source": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-main-52:\\drawable\\visa.png"
-    },
-    {
-        "merged": "com.example.applicationselectionwl.app-merged_res-50:/drawable_cross_logo.png.flat",
-        "source": "com.example.applicationselectionwl.app-main-52:/drawable/cross_logo.png"
     },
     {
         "merged": "C:\\Users\\w136630\\.gradle\\daemon\\8.0\\com.example.applicationselectionwl.app-merged_res-50:\\drawable_ic_launcher_background.xml.flat",

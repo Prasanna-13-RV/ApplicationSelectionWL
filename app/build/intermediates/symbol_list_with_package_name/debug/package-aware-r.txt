@@ -75,6 +75,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable baseline_arrow_right_alt_24
 drawable cross_logo
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -227,6 +228,7 @@ string switch_role
 string tab
 string template_percent
 string transaction_aborted
+string wait
 style DialogWindowTheme
 style FloatingDialogTheme
 style FloatingDialogWindowTheme

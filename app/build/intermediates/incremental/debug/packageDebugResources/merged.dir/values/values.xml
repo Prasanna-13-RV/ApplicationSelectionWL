@@ -10,5 +10,6 @@
     <string name="app_name">ApplicationSelectionWL</string>
     <string name="declined">Declined</string>
     <string name="transaction_aborted">Transaction aborted</string>
+    <string name="wait">Please wait</string>
     <style name="Theme.ApplicationSelectionWL" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>

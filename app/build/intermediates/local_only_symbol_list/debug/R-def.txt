@@ -7,6 +7,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable baseline_arrow_right_alt_24
 drawable cross_logo
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -18,6 +19,7 @@ mipmap ic_launcher_round
 string app_name
 string declined
 string transaction_aborted
+string wait
 style Theme.ApplicationSelectionWL
 xml backup_rules
 xml data_extraction_rules
