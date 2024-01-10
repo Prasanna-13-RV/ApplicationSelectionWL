@@ -31,6 +31,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.applicationselectionwl.R
 import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
+import com.example.applicationselectionwl.ui.components.WorldlineLogo
 import com.example.applicationselectionwl.ui.components.selectionScreenComponents.BottomButtons
 import com.example.applicationselectionwl.ui.components.selectionScreenComponents.EachApplication
 import com.example.applicationselectionwl.ui.theme.Abort
@@ -56,7 +57,7 @@ fun SelectionScreen(navController: NavController) {
             )
             .padding(20.dp)
     ) {
-        Text(text = "Worldline", color = Color.White, fontSize = 20.sp)
+        WorldlineLogo()
         Spacer(modifier = Modifier.height(10.dp))
         Column(
             modifier = Modifier
@@ -96,7 +97,7 @@ fun SelectionScreen(navController: NavController) {
                 }
             }
 
-            BottomButtons(selectedApplication.value,navController)
+            BottomButtons(selectedApplication.value, navController)
         }
     }
 }
