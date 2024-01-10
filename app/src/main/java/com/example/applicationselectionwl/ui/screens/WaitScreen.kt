@@ -25,7 +25,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.applicationselectionwl.R
 import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
 import com.example.applicationselectionwl.ui.theme.GreenWL
@@ -33,14 +35,21 @@ import kotlinx.coroutines.delay
 
 
 @Composable
-fun WaitScreen(data: ApplicationModel) {
+fun WaitScreen(data: ApplicationModel?) {
     var showContent by remember { mutableStateOf(false) }
     val strokeWidth = 5.dp
+
+    val application = remember { mutableStateOf<ApplicationModel?>(null) }
 
 
     LaunchedEffect(Unit) {
         delay(3000)
-        showContent = true
+
+        if (data != null) {
+            application.value = data
+            showContent = true
+
+        }
     }
 
 
@@ -69,13 +78,20 @@ fun WaitScreen(data: ApplicationModel) {
         ) {
 
             if (showContent) {
-                Row {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+
                     Image(
-                        painter = painterResource(data.aid),
-                        contentDescription = data.applicationName,
-                        modifier = Modifier.width(20.dp)
+                        painter = painterResource(application.value!!.image),
+                        contentDescription = application.value!!.applicationName,
+                        modifier = Modifier.width(50.dp)
                     )
-                    Text(data.applicationName)
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(
+                        application.value!!.applicationName,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp
+                    )
                 }
             } else {
                 CircularProgressIndicator(
