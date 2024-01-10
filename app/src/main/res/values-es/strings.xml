@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">ApplicationSelectionWL</string>
     <string name="wait">Espere por favor</string>
-    <string name="declined">Declined</string>
-    <string name="transaction_aborted">Transaction aborted</string>
+    <string name="declined">Rechazado</string>
+    <string name="transaction_aborted">Transacción abortada</string>
+    <string name="payment">Pago</string>
+    <string name="select_an_application">Seleccione una aplicación</string>
 </resources>
