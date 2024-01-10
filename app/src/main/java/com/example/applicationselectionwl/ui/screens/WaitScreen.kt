@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.applicationselectionwl.R
 import com.example.applicationselectionwl.data.dataClasses.ApplicationModel
+import com.example.applicationselectionwl.ui.components.WorldlineLogo
 import com.example.applicationselectionwl.ui.theme.GreenWL
 import kotlinx.coroutines.delay
 
@@ -43,15 +44,13 @@ fun WaitScreen(data: ApplicationModel?) {
     LaunchedEffect(Unit) {
         delay(3000)
 
-        if(data!=null){
+        if (data != null) {
             showContent = true
-
         }
     }
 
 
     Column(
-
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
@@ -59,14 +58,8 @@ fun WaitScreen(data: ApplicationModel?) {
 
     ) {
 
-
-        Image(
-            painter = painterResource(R.drawable.worldline_logo),
-            contentDescription = "Worldline",
-            modifier = Modifier
-                .width(200.dp)
-                .padding(top = 30.dp),
-        )
+        Spacer(modifier = Modifier.height(20.dp))
+        WorldlineLogo()
 
         Column(
             verticalArrangement = Arrangement.Center,
@@ -83,7 +76,12 @@ fun WaitScreen(data: ApplicationModel?) {
                         modifier = Modifier.width(50.dp)
                     )
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(data.applicationName, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 25.sp)
+                    Text(
+                        data.applicationName,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp
+                    )
                 }
             } else {
                 CircularProgressIndicator(
