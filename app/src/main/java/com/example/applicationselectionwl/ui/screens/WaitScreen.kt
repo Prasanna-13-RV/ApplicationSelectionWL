@@ -39,11 +39,14 @@ fun WaitScreen(data: ApplicationModel?) {
     var showContent by remember { mutableStateOf(false) }
     val strokeWidth = 5.dp
 
+    val application = remember { mutableStateOf<ApplicationModel?>(null) }
+
 
     LaunchedEffect(Unit) {
         delay(3000)
 
-        if(data!=null){
+        if (data != null) {
+            application.value = data
             showContent = true
 
         }
@@ -78,12 +81,17 @@ fun WaitScreen(data: ApplicationModel?) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
 
                     Image(
-                        painter = painterResource(data!!.image),
-                        contentDescription = data.applicationName,
+                        painter = painterResource(application.value!!.image),
+                        contentDescription = application.value!!.applicationName,
                         modifier = Modifier.width(50.dp)
                     )
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(data.applicationName, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 25.sp)
+                    Text(
+                        application.value!!.applicationName,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp
+                    )
                 }
             } else {
                 CircularProgressIndicator(
