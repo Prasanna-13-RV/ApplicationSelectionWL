@@ -31,7 +31,10 @@ fun BottomButtons(selectedApplication: ApplicationModel, navController: NavContr
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Button(
-            onClick = { navController.navigate("AbortScreen") },
+            onClick = {
+                navController.currentBackStackEntry?.savedStateHandle?.set("applicationModel", selectedApplication)
+                navController.navigate("WaitScreen")
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f), colors = ButtonDefaults.buttonColors(Abort)
